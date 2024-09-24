@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 class Cliente {
-    private String nomeCliente;
+    private String titular;
     private Scanner scanner = new Scanner(System.in);
 
-    public String nomeCliente() {
+    public String titular() {
         System.out.println("Digite seu nome:");
-        nomeCliente = scanner.nextLine();
-        return nomeCliente;
+        titular = scanner.nextLine();
+        return titular;
     }
 
-    public String getNome() {
-        return nomeCliente;
+    public String getTitular() {
+        return titular;
     }
 
-    public void setNome(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setTitular(String titular) {
+        this.titular = titular;
     }
 }

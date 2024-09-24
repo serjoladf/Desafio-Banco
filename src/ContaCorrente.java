@@ -1,8 +1,14 @@
 class ContaCorrente extends Conta {
     private double chequeEspecial = 500.00;
-    private final double movCheque = chequeEspecial; //
-    public ContaCorrente(String nomeCliente) {
-        super(nomeCliente);
+    private final double movCheque = chequeEspecial;
+    private String titular;
+    private int numeroCC;
+    private int numeroAg;
+
+    public ContaCorrente(String titular, int numeroCC, int numeroAg) {
+        this.titular = titular;
+        this.numeroCC = numeroCC;
+        this.numeroAg = numeroAg;
     }
 
     @Override
@@ -46,9 +52,24 @@ class ContaCorrente extends Conta {
     }
 
     @Override
+    public int geradorAgencia() {
+        numeroAg = gerador.nextInt(51) + 99;
+        return numeroAg;
+    }
+
+    @Override
+    public int geradorConta() {
+        numeroCC = gerador.nextInt(1000) + 1999;
+      return numeroCC;
+    }
+
+    @Override
     public void imprimirExtrato() {
         System.out.println("Extrato Conta Corrente:");
-        System.out.printf("Nome: %s, Saldo: %.2f%n", nomeCliente, saldo);
+        System.out.printf("Aência: %d%n",numeroAg);
+        System.out.printf("Conta: %d%n",numeroCC);
+        System.out.printf("Nome: %s, Saldo: %.2f%n", titular, saldo);
         System.out.printf("Cheque Especial: %.2f%n",chequeEspecial); // Extrato do Cheque Especial
     }
+
 }

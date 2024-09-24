@@ -1,10 +1,26 @@
-abstract class Conta {
-    protected String nomeCliente;
-    protected double saldo;
+import java.util.Random;
 
-    public Conta(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
-        this.saldo = 0.0;
+abstract class Conta {
+    Random gerador  = new Random();
+    protected double saldo;
+    protected String titular;
+    private int agencia;
+    private int numeroConta;
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
+
+    public int getNumeroConta() {
+        return numeroConta;
+    }
+
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
     }
 
     public abstract void depositar(double valor);
@@ -17,9 +33,14 @@ abstract class Conta {
         return saldo;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public String getTitular() {
+        return titular;
     }
 
     public abstract void imprimirExtrato();
+
+    public abstract int geradorConta();
+
+    public abstract int geradorAgencia();
 }
+

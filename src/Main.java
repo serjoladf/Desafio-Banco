@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +9,10 @@ public class Main {
         boolean continuar = true;
 
         Cliente cliente = new Cliente();
-        String nome = cliente.nomeCliente();
-        cliente.setNome(nome);
-        System.out.println("Digite uma Opção cliente, " + cliente.getNome());
+        String nomeCliente = cliente.titular();
+        cliente.setTitular(nomeCliente);
+
+        System.out.println("Digite uma Opção cliente, " + cliente.getTitular());
 
         while (continuar) {
             System.out.println("Digite: 1 - Criar conta  2 - Deposito  3 - Saque  4 - Consultar Saldo  5 - Transferência  6 - Saque com Limite Diário  0 - Encerrar");
@@ -23,8 +25,11 @@ public class Main {
                     switch (option) {
                         case 1:
                             if (contaCorrente == null) {
-                                contaCorrente = new ContaCorrente(cliente.getNome());
-                                System.out.println("Conta Corrente criada para " + cliente.getNome());
+                                contaCorrente = new ContaCorrente(cliente.getTitular(), 0, 0);
+                                contaCorrente.setNumeroConta(contaCorrente.geradorConta());
+                                contaCorrente.setAgencia(contaCorrente.geradorAgencia());
+                                System.out.println(contaCorrente.geradorConta());
+                                System.out.println("Conta Corrente criada para " + cliente.getTitular());
                                 contaCorrente.imprimirExtrato();
                             } else {
                                 System.out.println("Conta Corrente já existe.");
@@ -32,8 +37,10 @@ public class Main {
                             break;
                         case 2:
                             if (contaPoupanca == null) {
-                                contaPoupanca = new ContaPoupanca(cliente.getNome());
-                                System.out.println("Conta Poupança criada para " + cliente.getNome());
+                                contaPoupanca = new ContaPoupanca(nomeCliente,0,0);
+                                contaPoupanca.setNumeroConta(contaPoupanca.geradorAgencia());
+                                contaPoupanca.setNumeroConta(contaPoupanca.geradorConta());
+                                System.out.println("Conta Poupança criada para " + cliente.getTitular());
                                 contaPoupanca.imprimirExtrato();
                             } else {
                                 System.out.println("Conta Poupança já existe.");
@@ -194,7 +201,7 @@ public class Main {
                     System.out.println("Opção inválida. Tente novamente.");
             }
         }
-
+        System.out.println(contaCorrente.getAgencia()+" "+ contaCorrente.getNumeroConta());
         scanner.close();
     }
 }
