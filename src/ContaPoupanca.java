@@ -1,5 +1,8 @@
 class ContaPoupanca extends Conta {
+<<<<<<< HEAD
     private double taxaRendimento = 1.05;
+=======
+>>>>>>> a86adac3734f72529719153ef839e391423bee5f
     public ContaPoupanca(String nomeCliente) {
         super(nomeCliente);
     }
@@ -31,6 +34,9 @@ class ContaPoupanca extends Conta {
     public void imprimirExtrato() {
         System.out.println("Extrato Conta Poupança:");
         System.out.printf("Nome: %s, Saldo: %.2f%n", nomeCliente, saldo);
+<<<<<<< HEAD
         System.out.printf("Rendimento da conta: %.2f%n",(saldo*taxaRendimento));
+=======
+>>>>>>> a86adac3734f72529719153ef839e391423bee5f
     }
 }
