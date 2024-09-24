@@ -1,9 +1,6 @@
 class ContaCorrente extends Conta {
-<<<<<<< HEAD
     private double chequeEspecial = 500.00;
     private final double movCheque = chequeEspecial; //
-=======
->>>>>>> a86adac3734f72529719153ef839e391423bee5f
     public ContaCorrente(String nomeCliente) {
         super(nomeCliente);
     }
@@ -11,7 +8,6 @@ class ContaCorrente extends Conta {
     @Override
     public void depositar(double valor) {
         saldo += valor;
-<<<<<<< HEAD
         if(movCheque > chequeEspecial){ // Neste bloco caso tenha utilizado o limite do cheque especial
             double diferenca = movCheque - chequeEspecial; // ao depositar o limite é restabelecido
              if(saldo > diferenca) {
@@ -23,8 +19,6 @@ class ContaCorrente extends Conta {
              }
         }
 
-=======
->>>>>>> a86adac3734f72529719153ef839e391423bee5f
     }
 
     @Override
@@ -32,15 +26,12 @@ class ContaCorrente extends Conta {
         if (valor <= saldo) {
             saldo -= valor;
             return true;
-<<<<<<< HEAD
         }else if((saldo+chequeEspecial) > valor) { // para haver saque do especial ele tem que ser menor que o valor de saque
             valor = valor - saldo; // alterando a variavel valor depois de descontado o saldo que vai serm menor que valor
             chequeEspecial -= valor; // neste caso o Cheque especial debita a diferença
             saldo = 0; // saldo atualiza para 0 saldo
             depositar(saldo); // chamo a função dando valor Zero ao saldo
             return true;
-=======
->>>>>>> a86adac3734f72529719153ef839e391423bee5f
         }
         return false;
     }
@@ -58,9 +49,6 @@ class ContaCorrente extends Conta {
     public void imprimirExtrato() {
         System.out.println("Extrato Conta Corrente:");
         System.out.printf("Nome: %s, Saldo: %.2f%n", nomeCliente, saldo);
-<<<<<<< HEAD
         System.out.printf("Cheque Especial: %.2f%n",chequeEspecial); // Extrato do Cheque Especial
-=======
->>>>>>> a86adac3734f72529719153ef839e391423bee5f
     }
 }
