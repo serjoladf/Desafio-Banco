@@ -1,8 +1,8 @@
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         Conta contaCorrente = null;
         Conta contaPoupanca = null;
@@ -201,7 +201,7 @@ public class Main {
                     System.out.println("Opção inválida. Tente novamente.");
             }
         }
-        System.out.println(contaCorrente.getAgencia()+" "+ contaCorrente.getNumeroConta());
+
         scanner.close();
     }
 }

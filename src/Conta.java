@@ -7,16 +7,8 @@ abstract class Conta {
     private int agencia;
     private int numeroConta;
 
-    public int getAgencia() {
-        return agencia;
-    }
-
     public void setAgencia(int agencia) {
         this.agencia = agencia;
-    }
-
-    public int getNumeroConta() {
-        return numeroConta;
     }
 
     public void setNumeroConta(int numeroConta) {
@@ -33,14 +25,11 @@ abstract class Conta {
         return saldo;
     }
 
-    public String getTitular() {
-        return titular;
-    }
-
     public abstract void imprimirExtrato();
 
     public abstract int geradorConta();
 
     public abstract int geradorAgencia();
+
 }
 

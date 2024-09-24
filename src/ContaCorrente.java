@@ -1,9 +1,9 @@
-class ContaCorrente extends Conta {
+class ContaCorrente extends Conta{
     private double chequeEspecial = 500.00;
     private final double movCheque = chequeEspecial;
-    private String titular;
     private int numeroCC;
     private int numeroAg;
+
 
     public ContaCorrente(String titular, int numeroCC, int numeroAg) {
         this.titular = titular;
@@ -66,10 +66,11 @@ class ContaCorrente extends Conta {
     @Override
     public void imprimirExtrato() {
         System.out.println("Extrato Conta Corrente:");
-        System.out.printf("Aência: %d%n",numeroAg);
+        System.out.printf("Agência: %d%n",numeroAg);
         System.out.printf("Conta: %d%n",numeroCC);
-        System.out.printf("Nome: %s, Saldo: %.2f%n", titular, saldo);
+        System.out.printf("Nome: %s%nSaldo: %.2f%n", titular, saldo);
         System.out.printf("Cheque Especial: %.2f%n",chequeEspecial); // Extrato do Cheque Especial
     }
+
 
 }

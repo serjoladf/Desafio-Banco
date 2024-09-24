@@ -1,6 +1,6 @@
-class ContaPoupanca extends Conta {
-    private double taxaRendimento = 1.05;
-    private String titular;
+
+class ContaPoupanca extends Conta{
+    private final double taxaRendimento = 1.05;
     private int numeroCP;
     private int numeroAg;
 
@@ -48,9 +48,9 @@ class ContaPoupanca extends Conta {
     @Override
     public void imprimirExtrato() {
         System.out.println("Extrato Conta Poupança:");
-        System.out.printf("Aência: %d%n",numeroAg);
+        System.out.printf("Agência: %d%n",numeroAg);
         System.out.printf("Conta: %d%n",numeroCP);
-        System.out.printf("Nome: %s, Saldo: %.2f%n", titular, saldo);
+        System.out.printf("Nome: %s%nSaldo: %.2f%n", titular, saldo);
         System.out.printf("Rendimento da conta: %.2f%n",(saldo*taxaRendimento));
     }
 }

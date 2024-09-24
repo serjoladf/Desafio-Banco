@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class Cliente {
+
     private String titular;
     private Scanner scanner = new Scanner(System.in);
 
